@@ -1,0 +1,26 @@
+li {
+  background-image: #3f525c;
+
+}
+
+ul {
+  list-style-type: none;
+  // background-color: #3f525c;
+  width: 20rem;
+  li {
+    height: 2rem;
+  }
+  // :nth-child(even) {
+  //   background-color: grey
+  // }
+  // :nth-child(odd) {
+  //   background-color: lightgrey; }
+  }
+
+.isDone {
+  background-color: green;
+}
+
+.isOpen {
+  background-color: orange;
+}
