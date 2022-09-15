@@ -1,26 +1,38 @@
-li {
-  background-image: #3f525c;
-
+.output-container {
+  background-color: lightblue;
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  padding: 2rem;
 }
 
 ul {
+  padding-left: 1rem;
+  margin: auto;  
+  width: 20%;
   list-style-type: none;
-  // background-color: #3f525c;
-  width: 20rem;
+  width: 40rem;
+  li button {
+    position: relative;
+    left: 15rem;
+    vertical-align: middle;
+  }
+  li input {
+    position: relative;
+    left: 5rem;
+    width: 2rem;
+  }
   li {
-    height: 2rem;
+    height: 3rem;
+    align-items: center;
   }
-  // :nth-child(even) {
-  //   background-color: grey
-  // }
-  // :nth-child(odd) {
-  //   background-color: lightgrey; }
-  }
-
 .isDone {
   background-color: green;
+  align-items:  baseline;
 }
-
 .isOpen {
   background-color: orange;
+}
 }
