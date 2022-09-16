@@ -18,12 +18,15 @@ export class DashboardComponent implements OnInit {
 
 
   sortDone(){
-    const sorted: Item[] = this.itemsS.itemsArray.sort((a, b) => {
-      if (a.done !== b.done) {
-        return -1;
-      }
-    })
-
-
+    // const sorted: Item[] = this.itemsS.itemsArray.sort((a, b) => {
+    //   if (a.done !== b.done) {
+    //     return -1;
+    //   }
+    // })
   }
+
+  sortDate() {
+    
+  }
+
 }

@@ -1,11 +1,12 @@
 <div class="output-container">
-  <h2>open ToDos 😢</h2>
+  <h2>your Todos</h2>
 
   <ul>
     <li
       *ngFor="let item of itemsS.itemsArray; let i = index"
       [class.isDone]="item.done"
       [class.isOpen]="!item.done"
+      class="list-group-item"
     >
       <span *ngIf="!item.edit"> {{ item.description }} </span>
 
@@ -17,17 +18,17 @@
       />
 
       
-      <button (click)="item.edit = !item.edit">
+      <button class="btn btn-info" (click)="item.edit = !item.edit">
         {{ item.edit ? "save" : "edit" }}</button>
-      <button (click)="changeStatus(item)">
+      <button class="btn btn-success" (click)="changeStatus(item)">
         {{ item.done ? "finished" : "unfinished" }}
       </button>
-      <button (click)="deleteItem(item)">delete</button>
+      <button class="btn btn-danger" (click)="deleteItem(item)">delete</button>
         <div>
           <input
-            class="input-prio"
+            class="input-prio form-control"
             *ngIf="!item.done"
-            name="countPrio"
+            name="countPrio"form-control
             type="number"
             [(ngModel)]="item.prio"
             #countPrioTemplate="ngModel"
