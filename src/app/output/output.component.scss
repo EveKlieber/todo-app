@@ -1,7 +1,7 @@
 .output-container {
   background-color: lightblue;
   display: flex;
-  height: 80vh;
+  height: 60vh;
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
@@ -11,28 +11,32 @@
 ul {
   padding-left: 1rem;
   margin: auto;  
-  width: 20%;
   list-style-type: none;
-  width: 40rem;
-  li button {
-    position: relative;
-    left: 15rem;
-    vertical-align: middle;
-  }
-  li input {
-    position: relative;
-    left: 5rem;
-    width: 2rem;
-  }
+  width: 80%;
   li {
+    display: flex;
+    gap: 2rem;
     height: 3rem;
     align-items: center;
+    span {
+      flex-basis: 30%;
+      margin-left: 1rem;
+    }
+    div {
+      flex-basis: 5%;
+      .input-prio {
+        width: 100%;
+      }
+    }
+    button {
+     flex-basis: 10%;
+    }
   }
 .isDone {
   background-color: green;
-  align-items:  baseline;
 }
 .isOpen {
   background-color: orange;
 }
+
 }

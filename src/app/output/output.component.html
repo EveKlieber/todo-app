@@ -4,19 +4,36 @@
   <ul>
     <li
       *ngFor="let item of itemsS.itemsArray; let i = index"
-      [class.isDone]="item.done" [class.isOpen]="!item.done"
+      [class.isDone]="item.done"
+      [class.isOpen]="!item.done"
     >
-      {{ item.description }}  
-        <input 
-           name="countPrio"
-           type="number" 
-           [(ngModel)]="countPrio"
-           #countPrioTemplate="ngModel"
-           (change)="changePrio(countPrio)"
-           >
+      <span *ngIf="!item.edit"> {{ item.description }} </span>
+
+      <input
+        *ngIf="item.edit"
+        name="editDesc"
+        type="text"
+        [(ngModel)]="item.description"
+      />
+
       
-        <button (click)="changeStatus(item)">{{item.done  ? "finished" : "unfinished"}}</button>
-        <button (click)="deleteItem(item)">delete</button>
-    </li>
+      <button (click)="item.edit = !item.edit">
+        {{ item.edit ? "save" : "edit" }}</button>
+      <button (click)="changeStatus(item)">
+        {{ item.done ? "finished" : "unfinished" }}
+      </button>
+      <button (click)="deleteItem(item)">delete</button>
+        <div>
+          <input
+            class="input-prio"
+            *ngIf="!item.done"
+            name="countPrio"
+            type="number"
+            [(ngModel)]="item.prio"
+            #countPrioTemplate="ngModel"
+          />
+        </div>
+        <p>{{ item.issued | date:'medium'}}</p>
+      </li>
   </ul>
 </div>

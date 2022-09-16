@@ -12,9 +12,6 @@ export class OutputComponent implements OnInit {
 
   countPrio = 0;
   constructor(public itemsS: ItemsService) { }
-
-
-
   ngOnInit(): void {
   }
 
@@ -39,10 +36,7 @@ export class OutputComponent implements OnInit {
       this.itemsS.itemsArray = result;
   }
 
-  changePrio(countPrio: any){
-    // this.itemsS.itemsArray.forEach((task: Item) => {    
-    //   if (
-      // }
-      // )
+  editDescription(item: Item) {
+
   }
 }

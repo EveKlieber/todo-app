@@ -8,10 +8,10 @@ import { Item } from './item';
 export class ItemsService {
 
   itemsArray:Item[] = [ 
-      { description: 'eat', done: true, prio: 6 },
-      { description: 'sleep', done: false, prio: 2 },
-      { description: 'play', done: true, prio: 4 },
-      { description: 'laugh', done: false, prio: 1 },
+      { description: 'eat', done: true, prio: 6, edit: false, issued: new Date() },
+      { description: 'sleep', done: false, prio: 2, edit: false, issued: new Date() },
+      { description: 'play', done: true, prio: 4, edit: false, issued: new Date()},
+      { description: 'laugh', done: false, prio: 1, edit: false, issued: new Date() },
   ];
 
   

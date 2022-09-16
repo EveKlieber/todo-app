@@ -21,8 +21,7 @@ export class InputComponent implements OnInit {
     console.log("log", newItem.value)}  // works
 
    addItem(newItem:string) {
-        console.log(newItem)
-        this.itemsS.itemsArray.push({description: newItem, done: false, prio: 0});
+        newItem&&this.itemsS.itemsArray.push({description: newItem, done: false, prio: 0, edit: false, issued: new Date()});
         console.log(this.itemsS.itemsArray)
         this.newTodoName="";
   }
