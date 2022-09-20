@@ -8,7 +8,7 @@ import { ItemsService } from '../items.service';
 })
 export class InputComponent implements OnInit {
 
-  newTodoName="";
+  newTodoName="";  // ngModel name - rückzugriff this.newTodoName
 
 
   constructor(public itemsS: ItemsService) { }
@@ -23,6 +23,7 @@ export class InputComponent implements OnInit {
    addItem(newItem:string) {
         newItem&&this.itemsS.itemsArray.push({description: newItem, done: false, prio: 0, edit: false, issued: new Date()});
         console.log(this.itemsS.itemsArray)
+        this.itemsS.addLocalStorage();
         this.newTodoName="";
   }
 }

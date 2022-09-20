@@ -17,6 +17,20 @@ export class ItemsService {
   
   constructor() { }
 
+
+  addLocalStorage(){
+    localStorage.setItem('list', JSON.stringify(this.itemsArray))
+  }
+  
+  readLocalStorage(){
+    let stored = localStorage.getItem('list')
+    if (stored)  // wichtig für TypeScript damit null verhindert wird.
+    this.itemsArray = JSON.parse(stored)
+    this.itemsArray.forEach((item) => {
+      item.issued = new Date(item.issued)  // Date wird wieder obj
+      console.log(typeof item.issued)
+    })
+  }
  
   // addItem(todo:string) {
   //   this.itemsArray.push(todo)

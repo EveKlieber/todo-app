@@ -9,14 +9,14 @@
       class="list-group-item"
     >
       <span *ngIf="!item.edit"> {{ item.description }} </span>
-
+        <!--  toggle between span and input-->
       <input
         *ngIf="item.edit"
         name="editDesc"
         type="text"
-        [(ngModel)]="item.description"
+        [(ngModel)]="item.description" 
       />
-
+            <!--     ngModel (value aus dem Input feld) greift direkt auf das einzelne todo im array zu.-->
       
       <button class="btn btn-info" (click)="item.edit = !item.edit">
         {{ item.edit ? "save" : "edit" }}</button>

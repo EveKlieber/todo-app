@@ -18,15 +18,21 @@ export class DashboardComponent implements OnInit {
 
 
   sortDone(){
-    // const sorted: Item[] = this.itemsS.itemsArray.sort((a, b) => {
-    //   if (a.done !== b.done) {
-    //     return -1;
-    //   }
-    // })
+    const sorted: Item[] = this.itemsS.itemsArray.sort((a, b) => {
+      if (a.done) {
+        return -1;  // a vorne bei minus 1
+      } else if (b.done)  {
+        return 1;  // 
+      } else  {
+        return 0;
+      }
+    })
   }
 
-  sortDate() {
-    
+  sortDate(){
+    const sorted: Item[] = this.itemsS.itemsArray.sort((a, b) => b.issued.getTime() - a.issued.getTime())
+      }
+    // function gehen durch json stringlify and parse kaputt.
   }
 
-}
+

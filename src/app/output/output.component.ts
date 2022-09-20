@@ -13,6 +13,7 @@ export class OutputComponent implements OnInit {
   countPrio = 0;
   constructor(public itemsS: ItemsService) { }
   ngOnInit(): void {
+    this.itemsS.readLocalStorage()
   }
 
 
